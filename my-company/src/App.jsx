@@ -4,7 +4,7 @@ import About from "./Pages/About";
 import Services from "./Pages/Services";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
-import Navbar from "./components/Navbar";
+import Navbar from "../src/components/Navbar";
 import Footer from "./components/Footer";
 
 const App = () => {
