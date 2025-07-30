@@ -25,6 +25,7 @@ const Search = ({ onSearch }) => {
       const data = await fetchUserData(username);
       setUserData(data);
     } catch (error) {
+      console.error("Looks like we cant find the user", e);
       setError(true);
     } finally {
       setLoading(false);
@@ -58,7 +59,7 @@ const Search = ({ onSearch }) => {
       <div>
         <Search onSearch={handleSearch} />
         {loading && <p>Loading...</p>}
-        {error && <p>Look Like we can't find the user.</p>}
+        {error && <p>Looks like we cant find the user</p>}
         {userData && (
           <div>
             <img src={userData.avatar_url} alt="" />
