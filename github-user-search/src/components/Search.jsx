@@ -58,7 +58,7 @@ const Search = ({ onSearch }) => {
       <div>
         <Search onSearch={handleSearch} />
         {loading && <p>Loading...</p>}
-        {error && <p>Error fetching user data.</p>}
+        {error && <p>Look Like we can't find the user.</p>}
         {userData && (
           <div>
             <img src={userData.avatar_url} alt="" />
