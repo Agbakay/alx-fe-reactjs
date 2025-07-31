@@ -5,16 +5,17 @@ import { fetchUserData } from "../services/githubService";
 
 const Search = ({ onSearch }) => {
   const [userName, setUserName] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (userName.trim()) {
-      onSearch(userName);
-    }
-  };
-
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (userName.trim()) {
+      handleSearch(userName);
+      if (onSearch) onSearch(userName);
+    }
+  };
 
   const handleSearch = async (username) => {
     setLoading(true);
@@ -25,7 +26,7 @@ const Search = ({ onSearch }) => {
       const data = await fetchUserData(username);
       setUserData(data);
     } catch (error) {
-      console.error("Looks like we cant find the user", e);
+      console.error("Looks like we cant find the user", error);
       setError(true);
     } finally {
       setLoading(false);
@@ -44,7 +45,7 @@ const Search = ({ onSearch }) => {
           placeholder="Enter GitHub username"
           name="userName"
           id="userName"
-          className="border-black border-2 mb-3 p-2 rounded-sm"
+          className="bg-black px-10"
         />
 
         <button
@@ -57,7 +58,6 @@ const Search = ({ onSearch }) => {
       </form>
 
       <div>
-        <Search onSearch={handleSearch} />
         {loading && <p>Loading...</p>}
         {error && <p>Looks like we cant find the user</p>}
         {userData && (

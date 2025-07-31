@@ -12,6 +12,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
       </Routes>
       <Search />
+      good one
     </div>
   );
 };
