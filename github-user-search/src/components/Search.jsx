@@ -1,10 +1,11 @@
 import React from "react";
-import { useEffect } from "react";
 import { useState } from "react";
-import { fetchUserData } from "../services/githubService";
+import { searchGithubUsers } from "../services/githubService";
 
 const Search = ({ onSearch }) => {
   const [userName, setUserName] = useState("");
+  const [location, setLocation] = useState("");
+  const [repo, setRepo] = useState("");
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -23,8 +24,11 @@ const Search = ({ onSearch }) => {
     setUserData(null);
 
     try {
-      const data = await fetchUserData(username);
-      setUserData(data);
+      const data = await searchGithubUsers({
+        username,
+        location,
+        repo,
+      });
     } catch (error) {
       console.error("Looks like we cant find the user", error);
       setError(true);
@@ -46,6 +50,28 @@ const Search = ({ onSearch }) => {
           name="userName"
           id="userName"
           className="bg-black px-10"
+        />
+        <br></br>
+        <label htmlFor="location">Enter location</label>
+        <input
+          type="text"
+          name=""
+          id="location"
+          className="pt-3"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          placeholder="Lagos - Akure"
+        />
+
+        <br></br>
+        <label htmlFor="repo">Enter number of minimum Repo </label>
+        <input
+          type="number"
+          name=""
+          id=""
+          value={repo}
+          onChange={(e) => setRepo(e.target.vale)}
+          placeholder="Enter Min number of Repo"
         />
 
         <button
