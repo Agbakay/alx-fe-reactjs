@@ -21,7 +21,7 @@ const Search = ({ onSearch }) => {
   const handleSearch = async (username) => {
     setLoading(true);
     setError(null);
-    setUserData(null);
+    setUserData([]);
 
     try {
       const data = await searchGithubUsers({
@@ -88,11 +88,13 @@ const Search = ({ onSearch }) => {
         {error && <p>Looks like we cant find the user</p>}
         {userData && (
           <div>
-            <img src={userData.avatar_url} alt="" />
-            <h2>{userData.name || userData.login}</h2>
-            <p>@{userData.login}</p>
-            {userData.bio && <p>{userData.bio}</p>}
-            <a href={userData.html_url}>GitHub Profile</a>
+            {userData.map((user) => (
+              <div key={user.id} style={{ marginBottom: "1rem" }}>
+                <img src={user.avatar_url} alt="" width={50} />
+                <h2>{user.login}</h2>
+                <a href={user.html_url}>GitHub Profile</a>
+              </div>
+            ))}
           </div>
         )}
       </div>
