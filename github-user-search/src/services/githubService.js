@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const GITHUB_SEARCH_API_BASE_URL = "https://api.github.com/search/users";
+const GITHUB_SEARCH_API_BASE_URL = "https://api.github.com/search/users?q";
 const RESULTS_PER_PAGE = 30;
 
 // Function to fetch GitHub user data
