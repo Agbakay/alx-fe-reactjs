@@ -5,7 +5,7 @@ import { searchGithubUsers } from "../services/githubService";
 const Search = ({ onSearch }) => {
   const [userName, setUserName] = useState("");
   const [location, setLocation] = useState("");
-  const [repo, setRepo] = useState("");
+  const [minRepos, setMinRepos] = useState("");
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -70,7 +70,7 @@ const Search = ({ onSearch }) => {
           name=""
           id=""
           value={repo}
-          onChange={(e) => setRepo(e.target.vale)}
+          onChange={(e) => setMinRepos(e.target.vale)}
           placeholder="Enter Min number of Repo"
         />
 

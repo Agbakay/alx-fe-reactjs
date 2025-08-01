@@ -7,21 +7,21 @@ const RESULTS_PER_PAGE = 30;
 export const searchGithubUsers = async ({
   userName,
   location,
-  repo,
+  minRepos,
   page = 1,
 }) => {
   try {
     let queryParts = [];
 
     if (userName) {
-      queryParts.push(username);
+      queryParts.push(userName);
 
       if (location) {
         queryParts.push(`location:${location}`);
       }
 
-      if (repo && parseInt(repo, 10) >= 0) {
-        queryParts.push(`repos:>=${parseInt(repo, 10)}`);
+      if (minRepos && parseInt(minRepos, 10) >= 0) {
+        queryParts.push(`repos:>=${parseInt(minRepos, 10)}`);
       }
 
       if (queryParts.length === 0) {
