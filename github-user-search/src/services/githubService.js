@@ -4,7 +4,7 @@ const GITHUB_SEARCH_API_BASE_URL = "https://api.github.com/search/users?q";
 const RESULTS_PER_PAGE = 30;
 
 // Function to fetch GitHub user data
-export const searchGithubUsers = async ({
+export const fetchUserData = async ({
   userName,
   location,
   minRepos,
