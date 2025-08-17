@@ -5,9 +5,12 @@ const HomePage = () => {
 
   useEffect(() => {
     fetch("/data.json")
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
       .then((data) => setRecipes(data))
-      .catch((err) => console.error("Error Locading recipes:", err));
+      .catch((err) => console.error("Error Loading recipes:", err));
   }, []);
 
   return (
@@ -15,7 +18,7 @@ const HomePage = () => {
       <h1 className="text-3xl font-bold text-center mb-8">
         Recipe Sharing Platform
       </h1>
-      <div className="grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {recipes.map((recipe) => (
           <div
             key={recipe.id}
