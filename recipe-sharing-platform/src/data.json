@@ -3,12 +3,45 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/600/92c952",
+    "ingredients": [
+      "1 lb spaghetti",
+      "4 large eggs",
+      "1 cup grated Pecorino Romano cheese",
+      "8 oz guanciale or pancetta, diced",
+      "1/2 tsp black pepper"
+    ],
+    "instructions": [
+      "Cook the spaghetti according to package directions.",
+      "While the pasta is cooking, crisp the diced guanciale in a large pan.",
+      "In a bowl, whisk together the eggs, cheese, and black pepper.",
+      "Drain the pasta and immediately add it to the pan with the guanciale. Toss well.",
+      "Quickly pour the egg mixture over the hot pasta, tossing continuously to create a creamy sauce without scrambling the eggs. Serve immediately."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://via.placeholder.com/150"
+    "image": "https://via.placeholder.com/600/771796",
+    "ingredients": [
+      "2 lb chicken breast, cut into cubes",
+      "1 cup plain yogurt",
+      "2 tbsp lemon juice",
+      "2 tsp garam masala",
+      "1 tsp ground cumin",
+      "1 tsp paprika",
+      "1 large onion, chopped",
+      "3 cloves garlic, minced",
+      "1 can (15 oz) tomato sauce",
+      "1 cup heavy cream"
+    ],
+    "instructions": [
+      "Marinate the chicken in yogurt, lemon juice, and spices for at least 30 minutes.",
+      "Grill or pan-fry the chicken until cooked through.",
+      "In a separate pan, sauté the onion and garlic until soft.",
+      "Stir in the tomato sauce and heavy cream. Simmer for 10 minutes.",
+      "Add the cooked chicken to the sauce and simmer for another 5 minutes before serving with rice or naan."
+    ]
   }
 ]
