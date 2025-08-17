@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const homePage = () => {
+const HomePage = () => {
   const [receipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -43,4 +43,4 @@ const homePage = () => {
   );
 };
 
-export default homePage;
+export default HomePage;
