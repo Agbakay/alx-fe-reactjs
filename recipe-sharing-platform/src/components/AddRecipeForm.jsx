@@ -4,7 +4,7 @@ const AddRecipeForm = () => {
   const [formData, setFormData] = useState({
     title: "",
     ingredients: "",
-    instructions: "",
+    steps: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -22,8 +22,8 @@ const AddRecipeForm = () => {
     if (!formData.ingredients.trim()) {
       newErrors.ingredients = "Ingredients are required.";
     }
-    if (!formData.instructions.trim()) {
-      newErrors.instructions = "Instructions are required.";
+    if (!formData.steps.trim()) {
+      newErrors.steps = "Preparation steps are required.";
     }
     return newErrors;
   };
@@ -35,10 +35,8 @@ const AddRecipeForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       console.log("Form data submitted:", formData);
-
       alert("Recipe submitted successfully!");
-
-      setFormData({ title: "", ingredients: "", instructions: "" });
+      setFormData({ title: "", ingredients: "", steps: "" });
     }
   };
 
@@ -91,21 +89,21 @@ const AddRecipeForm = () => {
 
           <div>
             <label
-              htmlFor="instructions"
+              htmlFor="steps"
               className="block text-sm font-medium text-gray-700 mb-1"
             >
-              Instructions (each step on a new line)
+              Preparation Steps (each step on a new line)
             </label>
             <textarea
-              id="instructions"
-              name="instructions"
-              value={formData.instructions}
+              id="steps"
+              name="steps"
+              value={formData.steps}
               onChange={handleChange}
               rows="6"
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
             ></textarea>
-            {errors.instructions && (
-              <p className="mt-1 text-sm text-red-600">{errors.instructions}</p>
+            {errors.steps && (
+              <p className="mt-1 text-sm text-red-600">{errors.steps}</p>
             )}
           </div>
 
