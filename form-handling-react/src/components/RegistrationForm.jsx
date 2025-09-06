@@ -27,7 +27,43 @@ const RegistrationForm = () => {
     return newErrors;
   };
 
-  return <div>RegistrationForm</div>;
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="">Usernmane</label>
+        <br />
+        <input
+          type="text"
+          name="username"
+          value={formData.username}
+          onChange={hnadleChange}
+          placeholder="Enter Username"
+        />
+
+        <label htmlFor="">Email</label>
+        <br />
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          placeholder="Enter Email Address"
+          onChange={hnadleChange}
+        />
+
+        <label htmlFor="">Password</label>
+        <br />
+        <input
+          type="password"
+          name="password"
+          onChange={hnadleChange}
+          value={formData.password}
+          placeholder="Enter Password"
+        />
+
+        <button type="submit">Register Now</button>
+      </form>
+    </div>
+  );
 };
 
 export default RegistrationForm;
