@@ -35,7 +35,7 @@ const RegistrationForm = () => {
         <input
           type="text"
           name="username"
-          value={formData.username}
+          value={username}
           onChange={hnadleChange}
           placeholder="Enter Username"
         />
@@ -45,7 +45,7 @@ const RegistrationForm = () => {
         <input
           type="email"
           name="email"
-          value={formData.email}
+          value={email}
           placeholder="Enter Email Address"
           onChange={hnadleChange}
         />
@@ -56,7 +56,7 @@ const RegistrationForm = () => {
           type="password"
           name="password"
           onChange={hnadleChange}
-          value={formData.password}
+          value={password}
           placeholder="Enter Password"
         />
 
